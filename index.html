@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulseads Service — Performance Ads Agency</title>
+<meta name="description" content="Bold creative and focused ad campaigns for gaming, cricket, trading and forex brands.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#120c0b;--fg:#f7f2ea;--card:#1d1514;--muted:#b3a99c;--primary:#e0322b;--glow:#f0b43c;--border:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:Manrope,sans-serif;overflow-x:hidden}
+.display{font-family:'Bebas Neue',sans-serif;font-weight:400}
+section{padding:7rem 1.5rem;position:relative}
+@media(min-width:768px){section{padding:7rem 4rem}}
+.tag{font-size:.75rem;letter-spacing:.4em;color:var(--primary)}
+.muted{color:var(--muted)}
+h2{font-size:clamp(3rem,7vw,4.5rem);line-height:1;margin-top:1rem}
+.hero{min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 12s ease-out forwards}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,var(--bg),rgba(18,12,11,.8),rgba(18,12,11,.2))}
+.hero-in{position:relative;z-index:2;max-width:48rem}
+.hero h1{font-size:clamp(4rem,11vw,6.5rem);line-height:.95;margin-top:1.5rem}
+@keyframes kb{from{transform:scale(1.15)}to{transform:scale(1)}}
+@keyframes up{from{opacity:0;transform:translateY(40px) rotateX(40deg);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.anim-up{display:block;opacity:0;animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes shim{to{background-position:200% center}}
+.shimmer{background:linear-gradient(90deg,var(--primary),var(--glow),var(--primary));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 3s linear infinite}
+.anim-up.shimmer{animation:up 1s cubic-bezier(.2,.8,.2,1) forwards,shim 3s linear infinite}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-40px) scale(1.2)}}
+.orb{position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(90px);opacity:.45;pointer-events:none;animation:float 9s ease-in-out infinite}
+.orb-a{background:var(--primary);right:10%;top:15%}
+.orb-b{background:var(--glow);right:30%;bottom:5%;animation-delay:-4s;opacity:.25}
+@keyframes gridmove{to{background-position:0 60px}}
+.grid-floor{position:absolute;left:-50%;right:-50%;bottom:-10%;height:45%;background-image:linear-gradient(rgba(224,50,43,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(224,50,43,.5) 1px,transparent 1px);background-size:60px 60px;transform:perspective(400px) rotateX(65deg);-webkit-mask-image:linear-gradient(transparent,black);mask-image:linear-gradient(transparent,black);animation:gridmove 2s linear infinite;opacity:.5}
+.mq-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 0;overflow:hidden}
+.marquee{display:flex;width:max-content;animation:mq 25s linear infinite;font-size:clamp(2.25rem,6vw,3.75rem)}
+.marquee div{display:flex;gap:3rem;padding-right:3rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(60px) rotateX(25deg);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.grid{display:grid;gap:1.5rem;margin-top:4rem;perspective:1200px}
+@media(min-width:768px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{padding:2rem;border:1px solid var(--border);border-radius:1.25rem;background:linear-gradient(160deg,var(--card),var(--bg));transform-style:preserve-3d}
+.card.in:hover{transform:translateY(-10px) rotateX(6deg) rotateY(-6deg);box-shadow:0 30px 60px -20px rgba(224,50,43,.5);border-color:var(--primary)}
+.card .num{font-size:3rem;color:rgba(224,50,43,.4)}
+.card h3{font-size:1.9rem;margin-top:.5rem}
+.btn{position:relative;display:inline-flex;align-items:center;gap:.5rem;padding:1rem 2rem;border-radius:999px;font-weight:700;text-decoration:none;color:var(--fg);background:radial-gradient(circle at var(--mx,50%) var(--my,50%),var(--glow),var(--primary) 60%);box-shadow:0 6px 0 #7a1714,0 20px 40px -10px var(--primary),inset 0 2px 0 rgba(255,255,255,.4);transition:transform .15s ease-out,box-shadow .2s;transform-style:preserve-3d;overflow:hidden;animation:pulseglow 2.5s ease-in-out infinite}
+.btn:active{transform:translateY(4px)!important;box-shadow:0 2px 0 #7a1714}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);transform:translateX(-100%);animation:sweep 3s ease-in-out infinite}
+@keyframes sweep{60%,100%{transform:translateX(100%)}}
+@keyframes pulseglow{50%{box-shadow:0 6px 0 #7a1714,0 20px 60px -5px var(--glow),inset 0 2px 0 rgba(255,255,255,.4)}}
+.btn .ring{position:absolute;inset:-2px;border-radius:999px;border:2px solid var(--glow);opacity:0;animation:ring 2.5s ease-out infinite}
+@keyframes ring{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.4)}}
+.btn span{position:relative;z-index:1}
+.arrow{display:inline-block;transition:transform .3s}
+.btn:hover .arrow{transform:translate(4px,-4px) rotate(45deg)}
+.steps{display:grid;gap:2.5rem;margin-top:4rem}
+@media(min-width:768px){.steps{grid-template-columns:1fr 1fr 1fr}}
+.step-num{font-size:5rem;line-height:1;-webkit-text-stroke:2px var(--primary);color:transparent;transition:all .5s}
+.step:hover .step-num{color:var(--primary);transform:scale(1.1) rotate(-4deg);text-shadow:0 0 30px var(--primary)}
+.step h3{font-size:1.9rem;margin-top:1rem}
+.cta{text-align:center;padding:9rem 1.5rem;overflow:hidden}
+.cta h2{font-size:clamp(3.5rem,10vw,6rem)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.anim-up,.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+  <img class="hero-img" src="bg.jpg" alt="Cricket, trading charts and colour trading game" width="1600" height="1008">
+  <div class="hero-shade"></div><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="grid-floor"></div>
+  <div class="hero-in">
+    <p class="tag anim-up" style="animation-delay:.1s">INDEPENDENT PERFORMANCE ADS AGENCY</p>
+    <h1 class="display"><span class="anim-up" style="animation-delay:.25s">Pulseads</span><span class="anim-up shimmer" style="animation-delay:.4s">Service.</span></h1>
+    <p class="anim-up" style="animation-delay:.55s;font-size:1.5rem;margin-top:1.5rem">Bold creative. Focused campaigns.</p>
+    <p class="anim-up muted" style="animation-delay:.65s;margin-top:.5rem">Advertising built around your next move.</p>
+    <div class="anim-up" style="animation-delay:.8s;margin-top:2.5rem"><a class="btn" href="https://t.me/+2-YYeAP8TWcwMGRl" target="_blank" rel="noreferrer"><i class="ring"></i><span>Start a conversation <b class="arrow">↗</b></span></a></div>
+    <p class="anim-up muted" style="animation-delay:.95s;margin-top:2rem;font-size:.875rem">Strategy · Creative · Performance</p>
+  </div>
+</section>
+
+<div class="mq-wrap"><div class="marquee display">
+  <div><span>THE RIGHT MESSAGE.</span><span style="color:var(--primary)">THE RIGHT MOMENT.</span><span>Gaming ↗</span><span>Cricket ↗</span><span>Trading ↗</span><span>Forex ↗</span></div>
+  <div><span>THE RIGHT MESSAGE.</span><span style="color:var(--primary)">THE RIGHT MOMENT.</span><span>Gaming ↗</span><span>Cricket ↗</span><span>Trading ↗</span><span>Forex ↗</span></div>
+</div></div>
+
+<section>
+  <p class="tag reveal">01 / OUR EXPERTISE</p>
+  <h2 class="display reveal">Specialist sectors.<br><span class="muted">Focused execution.</span></h2>
+  <p class="muted reveal" style="margin-top:1rem;max-width:36rem">From campaign concept to creative delivery, we bring a clear plan to every brief.</p>
+  <div class="grid" id="services"></div>
+  <p class="muted" style="margin-top:2.5rem;font-size:.75rem">Regulated sectors require appropriate licensing, platform approval and compliance with local advertising rules.</p>
+</section>
+
+<section>
+  <p class="tag reveal">02 / OUR APPROACH</p>
+  <h2 class="display reveal">A clear plan.<br><span class="muted">From the first click.</span></h2>
+  <div class="steps">
+    <div class="step reveal"><div class="step-num display">01</div><h3 class="display">Understand</h3><p class="muted">Your audience, market and campaign objective.</p></div>
+    <div class="step reveal" style="transition-delay:120ms"><div class="step-num display">02</div><h3 class="display">Create</h3><p class="muted">A message and creative direction built for the brief.</p></div>
+    <div class="step reveal" style="transition-delay:240ms"><div class="step-num display">03</div><h3 class="display">Refine</h3><p class="muted">Review performance and improve what comes next.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="orb orb-a" style="left:50%;top:20%"></div>
+  <p class="tag reveal" style="position:relative">YOUR NEXT CAMPAIGN STARTS HERE</p>
+  <h2 class="display reveal" style="position:relative;margin-top:1.5rem">Let’s make<br><span class="shimmer">your next move.</span></h2>
+  <div class="reveal" style="position:relative;margin-top:3rem"><a class="btn" href="https://t.me/+2-YYeAP8TWcwMGRl" target="_blank" rel="noreferrer"><i class="ring"></i><span>Chat on Telegram <b class="arrow">↗</b></span></a></div>
+</section>
+</main>
+
+<script>
+var TG="https://t.me/+2-YYeAP8TWcwMGRl";
+var S=[["PLAYER ACQUISITION","Gaming Ads","Creative and acquisition strategy for eligible gaming and gambling brands."],["CAMPAIGN STRATEGY","Colour Trading Ads","Campaign planning for colour prediction platforms, subject to local rules."],["SPORTS & ENGAGEMENT","Cricket Ads","Match-day creative and campaigns for cricket audiences and sports brands."],["QUALIFIED INTEREST","Stock Market Ads","Lead-focused campaigns for eligible brokers, education and market services."],["GLOBAL MARKETS","Forex Trading Ads","Market-specific creative and acquisition for eligible forex businesses."],["END-TO-END EXECUTION","Full Funnel Setup","Creative, landing pages and measurement brought together in one strategy."]];
+document.getElementById("services").innerHTML=S.map(function(s,i){return '<article class="card reveal" style="transition-delay:'+i*80+'ms"><span class="num display">0'+(i+1)+'</span><p class="muted" style="margin-top:1rem;font-size:.75rem;letter-spacing:.3em">'+s[0]+'</p><h3 class="display">'+s[1]+'</h3><p class="muted" style="margin-top:.75rem;font-size:.875rem">'+s[2]+'</p><div style="margin-top:2rem"><a class="btn" href="'+TG+'" target="_blank" rel="noreferrer"><i class="ring"></i><span>Discuss '+s[1]+' <b class="arrow">↗</b></span></a></div></article>'}).join("");
+document.querySelectorAll(".btn").forEach(function(b){
+  b.addEventListener("mousemove",function(e){var r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    b.style.transform="perspective(600px) rotateX("+(-y*25)+"deg) rotateY("+(x*25)+"deg) translateZ(20px) scale(1.06)";
+    b.style.setProperty("--mx",(x+.5)*100+"%");b.style.setProperty("--my",(y+.5)*100+"%");});
+  b.addEventListener("mouseleave",function(){b.style.transform=""});
+});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
